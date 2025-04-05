@@ -8,8 +8,8 @@
 - ```Мозг```
 - ```Рутированный планшет```
 - ```Уже установленная Windows на планшете```
-- [```Образ UEFI```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI/uefi-v3.img)
-- [```Приложение WoA Helper```](https://github.com/Marius586/WoA-Helper-update/releases/tag/WOA)
+- [```Образ UEFI```](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/UEFI)
+- [```Приложение WoA Helper```](https://github.com/n00b69/woa-helper/releases/tag/APK)
 
 ## Настройка приложения dualboot
 > В этом руководстве предполагается, что у вас есть root, если это не так, пожалуйста, используйте [root guide](2-rootguide-ru.md ) чтобы получить рут 
