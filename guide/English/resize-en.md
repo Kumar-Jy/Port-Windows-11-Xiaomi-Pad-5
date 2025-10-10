@@ -68,33 +68,22 @@
 - Now resize your Windows partition:  
   - If you want to **increase** Windows space, right-click the **WINNABU** partition and choose **`Extend Volume`**  
   - If you want to **reduce** Windows space, right-click the **WINNABU** partition and choose **`Shrink Volume`**  
-  - Enter the amount of space to shrink or extend as needed  
+  - Enter the amount of space to shrink or extend as needed .
+  - Don't create partition from unallocated space as windows names it "Basic Data Partition", which is more than 16 symbols long — this breaks fastboot
+  - Close disk management app.
 
-#### Creating new userdata using Windows Disk Management app  
-- Locate the **unallocated space** at the end of **Drive 0**  
-- Right-click the unallocated block → choose **`New Simple Volume`**  
-- Follow the wizard:  
-  - Skip drive letter assignment  
-  - Format as **NTFS**  
-  - Leave the volume label empty  
-- After creation, close **`Windows Disk Management`** app  
-
-#### Fixing partition name using fixuserdataname.exe  
+#### Creating new userdata using fixuserdataname.exe  
 > [!IMPORTANT]  
-> This step is very important as by default Windows labels the partition "Basic Data Partition", which is more than 16 symbols long — this breaks fastboot!  
+> This step is very important steps as without it you cant boot into Android. 
 - Download [`fixuserdataname.exe`](https://github.com/erdilS/Port-Windows-11-Xiaomi-Pad-5/releases/download/1.0/fixuserdataname.exe)  
 - Run it by double-clicking it  
-> It will automatically detect and rename the newly created partition to **`userdata`**  
+> It will automatically detect unallocated space, create and format userdata partition and rename the newly created partition to **`userdata`**  
 - Wait for confirmation message (e.g. “Renamed successfully”)  
 - Close the tool  
 ---
 
-### Rebooting to Android and formatting data:
+### Rebooting to Android:
 - Use StA.exe to reboot to Android
-- When mi logo appears press and hold **`Volume +`** button to boot Android recovery
-- In recovery select **`Wipe Data`** - **`Wipe All Data`**
-- After Data is wiped successfully, Click **`Back To Main Menu`**
-- Click **`Reboot`** - **`Reboot to System`**
 
 > If you couldn't format data via recovery you can use **`fastboot -w`** command in fastboot (connect nabu in fastboot to your PC and run this command via platform tools cmd)
 
